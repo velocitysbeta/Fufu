@@ -1,0 +1,223 @@
+/* Fluid Typography System with CSS Clamp() */
+
+/* Base Font Size - Fluid scaling */
+html {
+    font-size: clamp(15px, 1vw + 14px, 18px);
+    scroll-behavior: auto; /* Let Lenis handle smooth scrolling */
+}
+
+body {
+    font-size: clamp(16px, 1vw + 15px, 18px);
+    line-height: clamp(1.4, 1.5vw + 1.2, 1.6);
+}
+
+/* Fluid Headings */
+h1, .h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 4.5rem);
+    line-height: clamp(1, 0.1vw + 0.95, 1.1);
+    letter-spacing: clamp(-0.03em, -0.01vw - 0.02em, -0.02em);
+}
+
+h2, .h2 {
+    font-size: clamp(1.75rem, 4vw + 0.5rem, 3.5rem);
+    line-height: clamp(1.1, 0.1vw + 1.05, 1.2);
+    letter-spacing: clamp(-0.025em, -0.01vw - 0.015em, -0.015em);
+}
+
+h3, .h3 {
+    font-size: clamp(1.375rem, 3vw + 0.25rem, 2.25rem);
+    line-height: clamp(1.2, 0.1vw + 1.15, 1.3);
+    letter-spacing: clamp(-0.02em, -0.005vw - 0.015em, -0.01em);
+}
+
+h4, .h4 {
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.75rem);
+    line-height: clamp(1.3, 0.1vw + 1.25, 1.4);
+}
+
+h5, .h5 {
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.375rem);
+    line-height: clamp(1.3, 0.1vw + 1.25, 1.4);
+}
+
+h6, .h6 {
+    font-size: clamp(0.875rem, 1vw + 0.25rem, 1.125rem);
+    line-height: clamp(1.3, 0.1vw + 1.25, 1.4);
+}
+
+/* Paragraph and Body Text */
+p, .body-text {
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+    line-height: clamp(1.5, 0.2vw + 1.4, 1.7);
+    max-width: 75ch; /* Optimal reading width */
+}
+
+/* Small Text */
+small, .small-text {
+    font-size: clamp(0.875rem, 0.25vw + 0.8rem, 0.9375rem);
+    line-height: clamp(1.4, 0.1vw + 1.35, 1.5);
+}
+
+/* Large Display Text */
+.display-text {
+    font-size: clamp(3rem, 8vw + 1rem, 7rem);
+    line-height: clamp(0.9, 0.05vw + 0.85, 1);
+    letter-spacing: clamp(-0.04em, -0.02vw - 0.03em, -0.025em);
+}
+
+/* Navigation Text */
+.nav-text {
+    font-size: clamp(0.9375rem, 0.5vw + 0.875rem, 1.0625rem);
+    letter-spacing: 0.01em;
+}
+
+/* Button Text */
+.button-text {
+    font-size: clamp(0.875rem, 0.5vw + 0.8rem, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Card Text */
+.card-title {
+    font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+    line-height: clamp(1.2, 0.1vw + 1.15, 1.3);
+}
+
+.card-body {
+    font-size: clamp(0.9375rem, 0.25vw + 0.875rem, 1rem);
+    line-height: clamp(1.4, 0.1vw + 1.35, 1.5);
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: clamp(0.8125rem, 0.25vw + 0.75rem, 0.875rem);
+    line-height: clamp(1.4, 0.1vw + 1.35, 1.5);
+}
+
+/* Fluid Spacing */
+.container {
+    padding-inline: clamp(1rem, 4vw, 3rem);
+    max-width: min(1280px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+/* Section Spacing */
+section {
+    padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+.hero-section {
+    padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+/* Card Spacing */
+.card {
+    padding: clamp(1rem, 3vw, 2rem);
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    border-radius: clamp(12px, 2vw, 24px);
+}
+
+/* Button Spacing */
+.button {
+    padding-inline: clamp(1rem, 2vw, 1.75rem);
+    padding-block: clamp(0.625rem, 1vw, 0.875rem);
+    border-radius: clamp(8px, 1vw, 12px);
+}
+
+/* Grid and Flex Gaps */
+.grid-responsive {
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+.flex-responsive {
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+/* Margin Utilities */
+.mt-responsive-sm { margin-top: clamp(0.5rem, 1vw, 0.75rem); }
+.mt-responsive-md { margin-top: clamp(1rem, 2vw, 1.5rem); }
+.mt-responsive-lg { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.mt-responsive-xl { margin-top: clamp(2rem, 4vw, 3.5rem); }
+
+.mb-responsive-sm { margin-bottom: clamp(0.5rem, 1vw, 0.75rem); }
+.mb-responsive-md { margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+.mb-responsive-lg { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.mb-responsive-xl { margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+
+/* Padding Utilities */
+.p-responsive-sm { padding: clamp(0.5rem, 1vw, 0.75rem); }
+.p-responsive-md { padding: clamp(1rem, 2vw, 1.5rem); }
+.p-responsive-lg { padding: clamp(1.5rem, 3vw, 2.5rem); }
+.p-responsive-xl { padding: clamp(2rem, 4vw, 3.5rem); }
+
+/* Line Height Optimization */
+@media (max-width: 640px) {
+    p, .body-text {
+        max-width: 100%;
+        hyphens: auto;
+        word-break: break-word;
+    }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+    html {
+        font-size: clamp(16px, 1.2vw + 14px, 17px);
+    }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1025px) {
+    .hero-headline {
+        font-size: clamp(3rem, 6vw + 1rem, 5.5rem);
+    }
+    
+    .section-title {
+        font-size: clamp(2.5rem, 4vw + 1rem, 4rem);
+    }
+}
+
+/* Ultra-wide Screen Constraints */
+@media (min-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 1440px;
+    }
+    
+    h1, .h1 {
+        font-size: 4.5rem;
+    }
+    
+    h2, .h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Prevent Text Orphans */
+h1, h2, h3, h4, h5, h6, p {
+    text-wrap: pretty; /* CSS4 */
+}
+
+/* Responsive Line Length */
+.optimal-line-length {
+    max-width: clamp(45ch, 50vw, 75ch);
+}
+
+/* Dynamic Font Loading */
+@supports (font-variation-settings: normal) {
+    body {
+        font-variation-settings: 
+            'wght' clamp(400, 1vw + 380, 450),
+            'wdth' clamp(95, 0.5vw + 93, 100);
+    }
+    
+    h1, h2, h3 {
+        font-variation-settings: 
+            'wght' clamp(600, 1vw + 580, 700),
+            'wdth' clamp(98, 0.5vw + 96, 102);
+    }
+}

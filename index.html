@@ -6,14 +6,56 @@
     <title>Velo - Fufufafa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/glassmorphism-advanced.css">
+    <link rel="stylesheet" href="css/fluid-typography.css">
+    <link rel="stylesheet" href="css/lenis-setup.css">
 </head>
 <body class="bg-[#FDFBF8]">
+    
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="glass-overlay"></div>
+    
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar glass-advanced glass-textured">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h2 class="text-xl font-bold gradient-text">Dossier Fufufafa</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#profil" class="sidebar-link" data-scroll-to="profil">
+                    <span class="sidebar-icon">👤</span>
+                    <span>Profil Akun</span>
+                </a>
+                <a href="#jejak" class="sidebar-link" data-scroll-to="jejak">
+                    <span class="sidebar-icon">🔍</span>
+                    <span>Jejak Digital</span>
+                </a>
+                <a href="#bukti" class="sidebar-link" data-scroll-to="bukti">
+                    <span class="sidebar-icon">📊</span>
+                    <span>Bukti Kunci</span>
+                </a>
+                <a href="#reaksi" class="sidebar-link" data-scroll-to="reaksi">
+                    <span class="sidebar-icon">🗳️</span>
+                    <span>Reaksi Politik</span>
+                </a>
+                <a href="#dampak" class="sidebar-link" data-scroll-to="dampak">
+                    <span class="sidebar-icon">📈</span>
+                    <span>Dampak & Analisis</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
 
-    <header id="beranda" class="sticky top-0 z-50 glass-effect">
+    <header id="beranda" class="sticky top-0 z-50 glass-header glass-advanced glass-shimmer">
         <nav class="container mx-auto py-3 md:py-4">
             <div class="flex items-center justify-between">
                 <div class="text-lg md:text-xl font-bold text-[#3D3522]">Dossier Fufufafa</div>
@@ -91,17 +133,20 @@
                     <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Identitas di balik 'fufufafa' terungkap bukan dari satu penemuan, melainkan akumulasi jejak digital yang saling terkait. Klik setiap kartu untuk melihat detail bukti.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                    <div class="evidence-card bg-white p-6 rounded-lg shadow-lg cursor-pointer reveal-on-scroll" data-modal="modal1">
+                    <div class="evidence-card glass-card-premium glass-interactive glass-shimmer p-6 rounded-lg cursor-pointer reveal-on-scroll" data-modal="modal1">
+                        <div class="card-glare"></div>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU1RWbu5x0cYokbv8j6bZpL_CndBn2vyi2QQ&s" alt="Unggahan Paralel di Media Sosial" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/e0e0e0/a0a0a0?text=Image+Error';">
                         <h3 class="text-xl font-semibold text-[#A0522D] mb-2">Unggahan Paralel</h3>
                         <p class="text-gray-600">Pada 3 Nov 2014, akun 'fufufafa' dan '@Chilli_Pari' (milik Gibran) mengunggah pertanyaan identik tentang "gunting steak".</p>
                     </div>
-                    <div class="evidence-card bg-white p-6 rounded-lg shadow-lg cursor-pointer reveal-on-scroll" data-modal="modal2" style="animation-delay: 0.2s;">
+                    <div class="evidence-card glass-card-premium glass-interactive glass-shimmer p-6 rounded-lg cursor-pointer reveal-on-scroll" data-modal="modal2">
+                        <div class="card-glare"></div>
                         <img src="https://awsimages.detik.net.id/community/media/visual/2024/09/12/belakangan-masyarakat-ramai-membicarakan-akun-kaskus-bernama-fufufafa_169.jpeg?w=1200" alt="Kode Biner Peretasan" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/e0e0e0/a0a0a0?text=Image+Error';">
                         <h3 class="text-xl font-semibold text-[#A0522D] mb-2">Kebocoran Data</h3>
                         <p class="text-gray-600">'Anonymous Indonesia' membocorkan NIK dan nomor telepon yang menghubungkan 'fufufafa' dengan Gibran.</p>
                     </div>
-                    <div class="evidence-card bg-white p-6 rounded-lg shadow-lg cursor-pointer reveal-on-scroll" data-modal="modal3" style="animation-delay: 0.4s;">
+                    <div class="evidence-card glass-card-premium glass-interactive glass-shimmer p-6 rounded-lg cursor-pointer reveal-on-scroll" data-modal="modal3">
+                        <div class="card-glare"></div>
                         <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/84/2024/09/23/GYF6p0sa0AEmaCWa-1667735646.jpg" alt="Tampilan Aplikasi Finansial di Ponsel" class="rounded-md mb-4 w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x200/e0e0e0/a0a0a0?text=Image+Error';">
                         <h3 class="text-xl font-semibold text-[#A0522D] mb-2">Tautan Nomor Telepon</h3>
                         <p class="text-gray-600">Nomor yang bocor terbukti sama dengan yang didaftarkan Gibran ke KPU dan terhubung ke akun finansial atas namanya.</p>
@@ -184,7 +229,7 @@
         </div>
     </div>
 
-    <script src="js/main.js" defer></script>
+    <script src="js/main-gsap.js" defer></script>
     <script src="js/charts.js" defer></script>
 </body>
 </html>

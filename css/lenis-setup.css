@@ -1,0 +1,112 @@
+/* Lenis Smooth Scroll Setup CSS */
+
+html.lenis {
+    height: auto;
+}
+
+html.lenis.lenis-smooth {
+    scroll-behavior: auto !important; /* Override any smooth-scroll CSS */
+}
+
+html.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+html.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+html.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+body.loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+body:not(.loaded) {
+    opacity: 0;
+}
+
+/* Remove any existing smooth-scroll behavior */
+* {
+    scroll-behavior: auto !important;
+}
+
+/* Ensure proper z-index layering */
+.sidebar {
+    z-index: 60;
+}
+
+.glass-overlay,
+#sidebar-overlay {
+    z-index: 55;
+}
+
+.sticky {
+    z-index: 50;
+}
+
+#modal-container {
+    z-index: 70;
+}
+
+/* Hamburger Menu Animation Styles */
+.hamburger-line {
+    transform-origin: center;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#menu-btn.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+}
+
+#menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#menu-btn.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Performance optimizations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.evidence-card,
+.glass-card-premium,
+.glass-interactive {
+    will-change: transform, opacity;
+}
+
+/* GPU acceleration hints */
+.glass-advanced,
+.glass-header,
+.sidebar {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Smooth transitions for interactive elements */
+.sidebar-link,
+.tab-button,
+.nav-link,
+.evidence-card {
+    transition: none; /* Let GSAP handle all transitions */
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html.lenis {
+        scroll-behavior: auto !important;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
